@@ -53,4 +53,4 @@ a = float(input("a: "))
 b = float(input("b: "))
 c = float(input("c: "))
 
-factorising(a,b,c)
+solvefact(a,b,c)
