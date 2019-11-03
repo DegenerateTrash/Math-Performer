@@ -4,7 +4,6 @@ import math
 from decimal import Decimal
 from fractions import Fraction
 import time
-import matplotlib.pyplot as plt
 
 print(len(str(0.45)))
 
@@ -12,6 +11,12 @@ def factorising(a,b,c):
     ### Todo Add support for coefficients
     roots = solvefact(a,b,c)
     print("(x + {0})(x + {1}) | Currently only works with coeffficient of 1".format(roots[0] * -1 , roots[1] * -1 ))
+
+def expandbracket(a,b,c,d):
+    #(ax + b)(cx + d)
+    #(ax * cx) + (ax * d) + (b * cx) + (b * d)
+    print("({}x + {})({}x + {}) is {}x^2 + {}x + {}".format(a,b,c,d,a*c, (a*d)+(b*c), b*d))
+
 
 def solvefact(a,b,c):
 
@@ -47,10 +52,12 @@ def solvefact(a,b,c):
             break
     print(roots)
     print("{0:0.10f} seconds".format(time.time() - start ))"""
+    print("Roots: {} {}".format(roots[0],roots[1]))
     return roots
 
 a = float(input("a: "))
 b = float(input("b: "))
 c = float(input("c: "))
+#d = float(input("d: "))
 
-solvefact(a,b,c)
+factorising(a,b,c)
